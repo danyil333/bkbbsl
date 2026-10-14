@@ -6,15 +6,20 @@
 <meta charset="UTF-8">
 
 <title>What is a HighTierHuman to a LowTierGod?</title>
-
 <style>
 
 body {
-    background-color:#34cfeb ;
+    background-color:#34cfeb;
     text-align:center;
     font-family:'Gill Sans';
 }
-
+button{
+    width:350px;
+    height:120px;
+    font-size:42px;
+    font-weight:bold;
+    cursor:pointer;
+}
 
 </style>
 
@@ -22,22 +27,13 @@ body {
 
 <body>
 
-
 <div id="test">
 
-<h1>НАЖМИ ЙООООУУ </h1>
+<h1>НАЖМИ ЙООООУУ</h1>
 
-
-   
-<button  width:350px;
-    height:120px;
-    font-size:42px;
-    font-weight:bold;
-    cursor:pointer;
-     onclick="start()">CLICK</button>
+<button onclick="start()">CLICK</button>
 
 </div>
-
 
 <img id="gif" src="hehehe777.gif"
 style="
@@ -51,35 +47,33 @@ object-fit:cover;
 z-index:9999;
 ">
 
-
-
-<audio id="sound">
-
-<source src="hehehe (audio-extractor.net).mp3" type="audio/mpeg">
-
+<audio id="sound" preload="auto">
+    <source src="hehehe (audio-extractor.net).mp3" type="audio/mpeg">
 </audio>
 
-
 <script>
+
+window.onload = function () {
+    document.getElementById("sound").load();
+};
 
 function start(){
 
 document.getElementById("test").innerHTML =
 "<h1>...</h1>";
 
-
 setTimeout(()=>{
-
 
 document.getElementById("gif").style.display="block";
 
-
 let sound=document.getElementById("sound");
+sound.currentTime = 0;
 sound.play();
 
 },111);
 
 }
+
 </script>
 
 </body>
